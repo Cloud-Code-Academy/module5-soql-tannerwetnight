@@ -27,7 +27,7 @@ public with sharing class SOQL {
 	 * @return List of all leads with Id, LastName, Company, Phone, Email
 	 * Update the corresponding test class and testGetAllLeads method to cover this method
 	 */
-	public static List<Lead> getAllLeads(Lead leadTest) {
+	public static List<Lead> getAllLeads() {
 	 //The body of the method
 		List<Lead> allLeads = [SELECT Id, LastName, Company, Phone, Email
 							   FROM Lead];
@@ -41,7 +41,7 @@ public with sharing class SOQL {
 	 * @return A list of Contact records.
 	 * Update the corresponding test class and testGetContactsByFirstName method to cover this method
 	 */
-	public static List<Contact> getContactsByFirstName (String firstName) {
+	public static List<Contact> getContactsByFirstName () {
 	//  The body of the method
 		List<Contact> firstNamesJohn = [SELECT Id, Name
 										FROM Contact
@@ -56,7 +56,7 @@ public with sharing class SOQL {
 	 * @return A list of Contact Ids.
 	 * Update the corresponding test class and testGetContactIdsByLastName method to cover this method
 	 */
-	public static List<Id>  getContactIdsByLastName() {
+	public static List<Id>  getContactIdsByLastName () {
 	//  The body of the method
 	List<Contact> listOfIds = [SELECT Id
 						  	   FROM Contact
@@ -78,7 +78,7 @@ public with sharing class SOQL {
 	 * @return A list of Opportunities with important opportunities fields
 	 * Update the corresponding test class and testGetClosedWonOpportunityCountByAccount method to cover this method
 	 */
-	public static List<Opportunity> getClosedWonOpportunityCountByAccount (Id accountId) {
+	public static List<Opportunity> getClosedWonOpportunityCountByAccount(Id accountId) {
 	//  The body of the method
 	List<Opportunity> opptyList = [SELECT Id, Name, StageName, AccountId, CloseDate, Amount
 								   FROM Opportunity
@@ -94,7 +94,7 @@ public with sharing class SOQL {
 	 * @return The Integer count of Account records.
 	 * Update the corresponding test class and testGetAccountCount method to cover this method
 	 */
-	public static Integer getAccountCount () {
+	public static Integer getAccountCount() {
 	//  The body of the method
 	List<Account> allAccounts = [SELECT Id
 						   FROM Account];
@@ -110,7 +110,7 @@ public with sharing class SOQL {
 	 * @return A map of Task Ids to Task records.
 	 * Update the corresponding test class and testGetTasksDueNextWeek method to cover this method
 	 */
-	public static Map<Id, Task> getTasksDueNextWeek () {
+	public static Map<Id, Task> getTasksDueNextWeek() {
 	//  The body of the method
 	Date datefield = Date.today() + 7;
 	Date today = Date.today();
@@ -132,7 +132,7 @@ public with sharing class SOQL {
 	 * @return A list of Contact records.
 	 * Update the corresponding test class and testGetContactsByEmailDomain method to cover this method
 	 */
-	public static List<Contact> getContactsByEmailDomain () {
+	public static List<Contact> getContactsByEmailDomain() {
 	//  The body of the method
 	List<Contact> exampleContacts = [SELECT Id, Email, Name
 									 FROM Contact
